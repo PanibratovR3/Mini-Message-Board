@@ -11,4 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
 
+app.use((error, request, response, next) => {
+  console.error(`${error.name}: ${error.message}`);
+});
+
 app.listen(PORT, () => console.log("Server was launched!"));

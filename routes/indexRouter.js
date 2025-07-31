@@ -1,4 +1,6 @@
 const { Router } = require("express");
+const EmptyTextError = require("../errors/EmptyTextError");
+const EmptyUserError = require("../errors/EmptyUserError");
 
 const messages = [
   {
@@ -29,9 +31,18 @@ indexRouter.get("/new", (request, response) => {
 });
 
 indexRouter.post("/new", (request, response) => {
+  const newText = request.body.messageText.trim();
+  const newUser = request.body.userName.trim();
+  if (newUser.length === 0 || !newUser) {
+    throw new EmptyUserError("User was not defined.");
+  }
+  if (newText.length === 0 || !newText) {
+    throw new EmptyTextError("Text was not entered.");
+  }
+
   messages.push({
-    text: request.body.messageText,
-    user: request.body.userName,
+    text: newText,
+    user: newUser,
     added: new Date(),
   });
   response.redirect("/");
