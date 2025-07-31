@@ -28,4 +28,13 @@ indexRouter.get("/new", (request, response) => {
   response.render("form", { title: "Add new message" });
 });
 
+indexRouter.post("/new", (request, response) => {
+  messages.push({
+    text: request.body.messageText,
+    user: request.body.userName,
+    added: new Date(),
+  });
+  response.redirect("/");
+});
+
 module.exports = indexRouter;
