@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eec134;
+}
+
+h1 {
+    text-align: center;
+}
+
+.create {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited, a:link {
+    color: rgb(46, 46, 221);
+}
+
+.message-container {
+    background-color: cyan;
+    border: 3px solid black;
+    margin: 10px 100px;
+}
+
+.message-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.message-text {
+    padding: 10px;
+    font-style: italic;
+    font-size: 1.7rem;
+}
+
+.message-date {
+    text-align: right;
+    font-size: 1.4rem;
+}
+
+.message-details {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 2.4rem;
+}

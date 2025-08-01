@@ -1,9 +1,14 @@
 <html>
     <body>
+        <head>
+            <link rel="stylesheet" href="/style.css" />
+        </head>
         <h1>
             <%= title %>
         </h1>
-        <a href="/new">Add new message</a>
+        <div class="create">
+            <a href="/new">Add new message</a>
+        </div>
         <div>
             <% messages.forEach((messageItem) => { %>
                 <%- include('message', {message: messageItem}) %>
