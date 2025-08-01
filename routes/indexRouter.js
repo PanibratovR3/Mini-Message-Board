@@ -4,16 +4,19 @@ const EmptyUserError = require("../errors/EmptyUserError");
 
 const messages = [
   {
+    id: crypto.randomUUID(),
     text: "That's, what she said!",
     user: "Michael",
     added: new Date(),
   },
   {
+    id: crypto.randomUUID(),
     text: "How you doin'?",
     user: "Joey",
     added: new Date(),
   },
   {
+    id: crypto.randomUUID(),
     text: "I am the Danger!!!",
     user: "Walter",
     added: new Date(),
@@ -30,6 +33,12 @@ indexRouter.get("/new", (request, response) => {
   response.render("form", { title: "Add new message" });
 });
 
+indexRouter.get("/:messageId", (request, response) => {
+  const { messageId } = request.params;
+  const message = messages.find((messageItem) => messageItem.id === messageId);
+  response.render("info", { message: message });
+});
+
 indexRouter.post("/new", (request, response) => {
   const newText = request.body.messageText.trim();
   const newUser = request.body.userName.trim();
@@ -41,6 +50,7 @@ indexRouter.post("/new", (request, response) => {
   }
 
   messages.push({
+    id: crypto.randomUUID(),
     text: newText,
     user: newUser,
     added: new Date(),
