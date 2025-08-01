@@ -1,18 +1,23 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="/style.css">
+    </head>
     <body>
         <h1><%= title %></h1>
-        <form method="POST" action="/new">
-            <div>
-                <label for="user-name">Name:</label>
-                <input name="userName" id="user-name" />
-            </div>
-            <div>
-                <label for="message-text">Text:</label>
-                <textarea name="messageText" id="message-text"></textarea>
-            </div>
-            <div>
-                <button>Add new message</button>
-            </div>
-        </form>
+        <div class="form-container">
+            <form method="POST" action="/new">
+                <div class="form-row">
+                    <label for="user-name">Name:</label>
+                    <input name="userName" id="user-name" />
+                </div>
+                <div class="form-row">
+                    <label for="message-text">Text:</label>
+                    <textarea name="messageText" id="message-text"></textarea>
+                </div>
+                <div class="form-row">
+                    <button class="add">Add new message</button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>

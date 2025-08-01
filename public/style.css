@@ -56,3 +56,56 @@ a:visited, a:link {
     padding: 10px;
     font-size: 2.4rem;
 }
+
+.form-container {
+    /* display: flex;
+    justify-content: center; */
+    background-color: rgba(164, 240, 89, 0.973);
+    border: 5px solid darkred;
+    margin: 10px 100px;
+}
+
+input, textarea {
+    font: inherit;
+    font-size: 1.5rem;
+}
+
+textarea {
+    resize: none;
+}
+
+.form-row {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+textarea {
+    margin-top: 10px;
+}
+
+label:last-of-type {
+    margin-top: 10px;
+}
+
+input {
+    max-height: 30px;
+    max-width: 160px;
+    margin-top: 10px;
+}
+
+.form-row:last-of-type {
+    padding: 10px 0;
+}
+
+.add {
+    background-color: mediumspringgreen;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}

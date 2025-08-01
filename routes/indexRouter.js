@@ -33,7 +33,7 @@ indexRouter.get("/new", (request, response) => {
   response.render("form", { title: "Add new message" });
 });
 
-indexRouter.get("/:messageId", (request, response) => {
+indexRouter.get("/message/:messageId", (request, response) => {
   const { messageId } = request.params;
   const message = messages.find((messageItem) => messageItem.id === messageId);
   response.render("info", { message: message });
