@@ -1,6 +1,6 @@
 <div class="message-container">
     <div class="message-header">Message from @<%= message.user %></div>
     <div class="message-text"><%= message.text %></div>
-    <div class="message-date">Date: <%= message.added %></div>
+    <div class="message-date">Date: <%= message.added.toDateString() %> <%= message.added.getHours() %>:<%= message.added.getMinutes() %></div>
     <div class="message-details"><a href="/message/<%= message.id %>">Details</a></div>
 </div>
