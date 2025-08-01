@@ -1,14 +1,17 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="/style.css">
+    </head>
     <body>
-        <div>
-            <div>
-                <div>Message from <%= message.user %></div>
-                <div><%= message.text %></div>
-                <div>Date: <%= message.added %></div>                
-            </div>
-        </div>
-        <div>
+        <div class="backward">
             <a href="/">To main page</a>
+        </div>        
+        <div>
+            <div class="message-container">
+                <div class="message-header">Message from @<%= message.user %></div>
+                <div class="message-text"><%= message.text %></div>
+                <div class="message-date">Date: <%= message.added %></div>                
+            </div>
         </div>
     </body>
 </html>
