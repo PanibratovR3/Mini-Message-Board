@@ -1,4 +1,6 @@
 const queries = require("../db/queries");
+const EmptyTextError = require("../errors/EmptyTextError");
+const EmptyUserError = require("../errors/EmptyUserError");
 
 async function getMessages(request, response) {
   const messages = await queries.getAllMessages();
@@ -22,8 +24,22 @@ async function createMessageGet(request, response) {
   });
 }
 
+async function createMessagePost(request, response) {
+  const newUser = request.body.userName.trim();
+  const newMessageText = request.body.messageText.trim();
+  if (newUser.length === 0 || !newUser) {
+    throw new EmptyUserError("User was not defined.");
+  }
+  if (newMessageText.length === 0 || !newMessageText) {
+    throw new EmptyTextError("Text was not entered.");
+  }
+  await queries.insertMessage(newUser, newMessageText);
+  response.redirect("/");
+}
+
 module.exports = {
   getMessages,
   getMessage,
   createMessageGet,
+  createMessagePost,
 };

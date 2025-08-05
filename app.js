@@ -1,9 +1,11 @@
 const express = require("express");
 const path = require("path");
-const app = express();
+const dotenv = require("dotenv");
 const indexRouter = require("./routes/indexRouter.js");
 
-const PORT = 3000;
+const app = express();
+dotenv.config({ quiet: true });
+const PORT = process.env.PORT || 3000;
 const assetsPath = path.join(__dirname, "public");
 
 app.set("views", path.join(__dirname, "views"));
