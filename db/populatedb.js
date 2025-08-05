@@ -1,3 +1,5 @@
+#! usr/bin/env node
+
 const { Client } = require("pg");
 const dotenv = require("dotenv");
 dotenv.config({ quiet: true });
