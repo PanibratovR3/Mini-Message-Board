@@ -27,13 +27,8 @@ const indexController = require("../controllers/indexController");
 const indexRouter = Router();
 
 indexRouter.get("/", indexController.getMessages);
-
-// indexRouter.get("/new", (request, response) => {
-//   response.render("form", { title: "Add new message" });
-// });
-
 indexRouter.get("/message/:messageId", indexController.getMessage);
-
+indexRouter.get("/new", indexController.createMessageGet);
 // indexRouter.post("/new", (request, response) => {
 //   const newText = request.body.messageText.trim();
 //   const newUser = request.body.userName.trim();

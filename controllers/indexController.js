@@ -16,7 +16,14 @@ async function getMessage(request, response) {
   });
 }
 
+async function createMessageGet(request, response) {
+  response.render("form", {
+    title: "Add New Message",
+  });
+}
+
 module.exports = {
   getMessages,
   getMessage,
+  createMessageGet,
 };
