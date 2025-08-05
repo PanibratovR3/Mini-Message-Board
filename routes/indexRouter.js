@@ -32,11 +32,7 @@ indexRouter.get("/", indexController.getMessages);
 //   response.render("form", { title: "Add new message" });
 // });
 
-// indexRouter.get("/message/:messageId", (request, response) => {
-//   const { messageId } = request.params;
-//   const message = messages.find((messageItem) => messageItem.id === messageId);
-//   response.render("info", { message: message });
-// });
+indexRouter.get("/message/:messageId", indexController.getMessage);
 
 // indexRouter.post("/new", (request, response) => {
 //   const newText = request.body.messageText.trim();

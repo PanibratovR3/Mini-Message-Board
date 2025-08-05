@@ -8,6 +8,15 @@ async function getMessages(request, response) {
   });
 }
 
+async function getMessage(request, response) {
+  const { messageId } = request.params;
+  const message = await queries.getMessageById(Number(messageId));
+  response.render("info", {
+    message: message[0],
+  });
+}
+
 module.exports = {
   getMessages,
+  getMessage,
 };
